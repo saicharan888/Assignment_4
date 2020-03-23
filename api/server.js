@@ -27,6 +27,8 @@ async function getNextSequence(name) {
   return result.value.current;
 }
 
+/* eslint linebreak-style: "off" */
+
 async function addProduct(_, { product }) {
   const productNew = { ...product };
   console.log('Added new product to inventory');

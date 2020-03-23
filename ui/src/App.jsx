@@ -75,6 +75,8 @@ class ProductAdd extends React.Component {
 
   /* eslint react/jsx-no-target-blank: "off" */
 
+  /* eslint linebreak-style: "off" */
+
   render() {
     return (
       <div>
