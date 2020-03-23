@@ -9,7 +9,7 @@ const { ApolloServer } = require('apollo-server-express');
 const { MongoClient } = require('mongodb');
 
 const url = process.env.DB_URL || 'mongodb+srv://saicharan45:Katta1995@fullstackcluster0-kvjcb.mongodb.net/ProductList?retryWrites=true&w=majority';
-const port_server = process.env.API_SERVER_PORT || 3000;
+const portServer = process.env.API_SERVER_PORT || 3000;
 
 let db;
 
@@ -28,10 +28,10 @@ async function getNextSequence(name) {
 }
 
 async function addProduct(_, { product }) {
-  const Product_new = { ...product };
+  const productNew = { ...product };
   console.log('Added new product to inventory');
-  Product_new.id = await getNextSequence('products');
-  const result = await db.collection('products').insertOne(Product_new);
+  productNew.id = await getNextSequence('products');
+  const result = await db.collection('products').insertOne(productNew);
   const finalProduct = await db.collection('products')
     .findOne({ _id: result.insertedId });
   return finalProduct;
@@ -64,8 +64,8 @@ server.applyMiddleware({ app, path: '/graphql' });
 (async function start() {
   try {
     await connectToDb();
-    app.listen(port_server, () => {
-      console.log(`API started on port ${port_server}`);
+    app.listen(portServer, () => {
+      console.log(`API started on port ${portServer}`);
     });
   } catch (err) {
     console.log('ERROR:', err);
