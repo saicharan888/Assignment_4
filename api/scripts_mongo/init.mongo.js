@@ -5,7 +5,7 @@
 
 const productDB = [
   {
-    id: 1, category: 'Shirts', name: 'Allensolly Shirt', price: 10.90, image: 'https://www.pinterest.com/pin/727753621013110598/',
+    id: 1, category: 'Shirts', name: 'Allensolly Shirt', price: 10, image: 'https://mms-images.out.customink.com/mms/images/catalog/colors/176101/views/alt/front_medium_extended.png?design=kxq0-00bm-dfby',
   },
 ];
 
